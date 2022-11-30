@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  db:
+      container_name: friends_db
+      image: mysql:8.0.21
+      restart: always
+      # Lista de portas mapeadas de dentro para fora do container
+      # na notação porta_de_fora:porta_de_dentro
+      ports:
+        # Expõe a porta padrão do banco de dados
+        - 3306:3306
+      environment:
+        MYSQL_ROOT_PASSWORD: password
